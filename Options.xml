@@ -1,0 +1,25 @@
+<ParameterList name="TeaLeaf">
+
+<ParameterList name="Solver Parameters">
+  <Parameter        name="Belos Solver"                         type="string"   value="CG"/>
+  <Parameter        name="MueLu Preconditioner"                 type="bool"     value="false"/>
+</ParameterList>
+
+<ParameterList name="Belos Parameters">
+  <Parameter        name="Output Frequency"                     type="int"      value="-1"/>
+  <Parameter        name="Verbosity"                            type="int"      value="0"/>
+  <Parameter        name="Convergence Tolerance"                type="double"   value="1.0e-15"/>
+  <Parameter        name="Timer Label"                          type="string"   value="Outer Krylov solver"/>
+</ParameterList>
+
+<ParameterList name="MueLu Parameters">
+  <Parameter        name="verbosity"                            type="string"   value="low"/>
+  <Parameter        name="coarse: max size"                     type="int"      value="4800"/>
+  <Parameter        name="coarse: type"                         type="string"   value="RELAXATION"/>
+  <ParameterList    name="coarse: params">
+    <Parameter      name="relaxation: type"                     type="string"   value="Symmetric Gauss-Seidel"/>
+    <Parameter      name="relaxation: sweeps"                   type="int"      value="3"/>
+    <Parameter      name="relaxation: damping factor"           type="double"   value="1.0"/>
+  </ParameterList>
+</ParameterList>
+</ParameterList>
